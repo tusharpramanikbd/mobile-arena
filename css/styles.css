@@ -32,4 +32,25 @@ end of global classes
 ======================
 */
 
+/*
+===============
+Search Section
+===============
+*/
+.search{
+	width: 85%;
+}
+@media screen and (min-width: 676px) {
+  .search{
+		width: 60%;
+	}
+}
+/*
+======================
+End of Search Section
+======================
+*/
+
+
+
 
