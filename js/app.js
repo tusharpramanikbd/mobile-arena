@@ -1,4 +1,5 @@
 import { fetchPhoneList } from "./fetchData.js";
+import { initShowDetailsEventListener } from "./phoneDetails.js"
 
 let btnSearch, sectionPhoneList, noPhoneFound, spinnerSection, sectionShowAll, btnShowAll, allPhoneList;
 
@@ -75,6 +76,7 @@ const showPhoneList = (phoneList) => {
         phone_name : phoneName,
         brand,
         image,
+        slug : id
       } = phone;
       return `<div class="col-12 col-md-6 col-lg-4">
       <div class="card p-2">
@@ -82,7 +84,7 @@ const showPhoneList = (phoneList) => {
         <div class="mt-2 body-details">
           <h5 class="card-title">Name: ${phoneName}</h5>
           <p class="card-text mb-5">Brand: ${brand}</p>
-          <a href="#" class="btn btn-primary btn-details">Details</a>
+          <a href="#" data-id=${id} class="btn btn-primary btn-details">Details</a>
         </div>
       </div>
     </div>`;
@@ -91,6 +93,10 @@ const showPhoneList = (phoneList) => {
 
     phoneListContainer.innerHTML = phoneListHtml;
     sectionShowAll.classList.remove("show-element");
+
+    initShowDetailsEventListener();
 }
+
+
 
 
