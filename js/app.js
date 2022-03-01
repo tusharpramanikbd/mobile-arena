@@ -1,37 +1,49 @@
 import { fetchPhoneList } from "./fetchData.js";
 
 
-let btnSearch, sectionPhoneList, noPhoneFound, spinnerSection;
+let btnSearch, sectionPhoneList, noPhoneFound, spinnerSection, sectionShowAll, btnShowAll, allPhoneList;
 
 const initUI = () => {
   btnSearch = document.querySelector("#btn-search");
   sectionPhoneList = document.querySelector(".section-phone-list");
   noPhoneFound = document.querySelector(".no-phone-found-section");
   spinnerSection = document.querySelector(".spinner-section");
+  sectionShowAll = document.querySelector(".section-show-all");
 }
 
 initUI();
 
+const initShowAllButton = () => {
+  btnShowAll = document.querySelector("#btn-show-all");
+  btnShowAll.addEventListener("click",()=>{
+    showPhoneList(allPhoneList);
+  })
+}
+
+
 btnSearch.addEventListener("click", async (e)=>{
   e.preventDefault();
   spinnerSection.classList.add("show-element");
-  const inputSearch = document.querySelector("#input-search").value;
+  const inputSearch = document.querySelector("#input-search").value.toLowerCase();
 
   try {
     const result = await fetchPhoneList(inputSearch);
     const phoneList = result.data;
     if(phoneList.length < 1){
       showEmptyList();
+      sectionShowAll.classList.remove("show-element");
     }
     else{
       if(phoneList.length > 20){
+        allPhoneList = phoneList;
         const reducedPhoneList = phoneList.slice(0, 20);
         showPhoneList(reducedPhoneList);
-        console.log(phoneList);
-        console.log(reducedPhoneList);
+        sectionShowAll.classList.add("show-element");
+        initShowAllButton();
       }
       else{
         showPhoneList(phoneList);
+        sectionShowAll.classList.remove("show-element");
       }
       
     }
@@ -75,6 +87,7 @@ const showPhoneList = (phoneList) => {
     .join("");
 
     phoneListContainer.innerHTML = phoneListHtml;
+    sectionShowAll.classList.remove("show-element");
 }
 
 

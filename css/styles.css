@@ -76,6 +76,9 @@ Phone list section
 .section-phone-list{
 	display: none;
 }
+.container-phone-list{
+	position: relative;
+}
 .body-details{
 	position: relative;
 }
@@ -120,14 +123,20 @@ Spinner Section
 	left: 49%;
 	display: none;
 }
-.show-element{
-	display: block;
-}
+
 /*
 =======================
 End of Spinner Section
 =======================
 */
+
+.section-show-all{
+	display: none;
+}
+
+.show-element{
+	display: block;
+}
 
 
 
