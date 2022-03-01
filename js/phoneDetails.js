@@ -16,8 +16,11 @@ const initShowDetailsEventListener = () => {
 }
 
 const showPhoneDetails = (phoneDetails) => {
-  console.log(phoneDetails);
+  
   const {name, releaseDate, brand} = phoneDetails;
+  const mainFeatures = phoneDetails.mainFeatures;
+  console.log(mainFeatures);
+  const { chipSet, displaySize, memory, storage} = mainFeatures;
   const sectionPhoneDetails = document.querySelector("#section-phone-details");
 
   const phoneDetailsHtml = `<div class="container mb-5 bg-white p-3 rounded shadow-lg container-phone-details">
@@ -59,7 +62,7 @@ const showPhoneDetails = (phoneDetails) => {
               <p class="fw-bold">Storage:</p> 
             </div>
             <div class="col-8">
-              <p>128GB/256GB/1TB storage, no card slot</p> 
+              <p>${storage}</p> 
             </div>
           </div>
           <div class="row">
@@ -67,7 +70,7 @@ const showPhoneDetails = (phoneDetails) => {
               <p class="fw-bold">Display Size:</p> 
             </div>
             <div class="col-8">
-              <p>6.7 inches, 109.8 cm2 (~87.4% screen-to-body ratio)</p> 
+              <p>${displaySize}</p> 
             </div>
           </div>
           <div class="row">
@@ -75,7 +78,7 @@ const showPhoneDetails = (phoneDetails) => {
               <p class="fw-bold">ChipSet:</p> 
             </div>
             <div class="col-8">
-              <p>Apple A15 Bionic (5 nm)</p> 
+              <p>${chipSet}</p> 
             </div>
           </div>
           <div class="row">
@@ -83,7 +86,7 @@ const showPhoneDetails = (phoneDetails) => {
               <p class="fw-bold">Memory:</p> 
             </div>
             <div class="col-8">
-              <p>128GB 6GB RAM, 256GB 6GB RAM, 512GB 6GB RAM, 1TB 6GB RAM</p> 
+              <p>${memory}</p> 
             </div>
           </div>
           <div class="row">
