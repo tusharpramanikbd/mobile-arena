@@ -51,6 +51,26 @@ End of Search Section
 ======================
 */
 
+/*
+======================
+Phone list section
+======================
+*/
+.body-details{
+	position: relative;
+}
+.btn-details{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+/*
+==========================
+End of Phone list section
+==========================
+*/
+
+
 
 
 
