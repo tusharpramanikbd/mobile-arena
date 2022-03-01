@@ -170,7 +170,19 @@ const showPhoneDetails = (phoneDetails) => {
 </div>`;
 
 sectionPhoneDetails.innerHTML = phoneDetailsHtml;
-
+initCrossButtonListener();
 }
 
-export { initShowDetailsEventListener };
+const initCrossButtonListener = () => {
+  const btnCross = document.querySelector(".btn-cross");
+  btnCross.addEventListener("click", ()=>{
+    removeProductDetails();
+  })
+}
+
+const removeProductDetails = () => {
+  const element = document.querySelector(".container-phone-details");
+  element.parentNode.removeChild(element);
+}
+
+export { initShowDetailsEventListener, removeProductDetails};

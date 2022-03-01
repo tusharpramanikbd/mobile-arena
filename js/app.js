@@ -1,5 +1,5 @@
 import { fetchPhoneList } from "./fetchData.js";
-import { initShowDetailsEventListener } from "./phoneDetails.js"
+import { initShowDetailsEventListener, removeProductDetails } from "./phoneDetails.js"
 
 let btnSearch, sectionPhoneList, noPhoneFound, spinnerSection, sectionShowAll, btnShowAll, allPhoneList;
 
@@ -14,11 +14,19 @@ const initUI = () => {
 
 initUI();
 
+const checkPhoneDetailsVisible = () => {
+  const element = document.querySelector(".container-phone-details");
+  if(element){
+    removeProductDetails();
+  }
+}
+
 // Button search event listener
 btnSearch.addEventListener("click", async (e)=>{
   e.preventDefault();
   spinnerSection.classList.add("show-element");
   const inputSearch = document.querySelector("#input-search").value.toLowerCase();
+  checkPhoneDetailsVisible();
 
   try {
     const result = await fetchPhoneList(inputSearch);
