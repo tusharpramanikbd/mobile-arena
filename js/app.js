@@ -14,6 +14,7 @@ const initUI = () => {
 
 initUI();
 
+// Checking if the phone details visible or not
 const checkPhoneDetailsVisible = () => {
   const element = document.querySelector(".container-phone-details");
   if(element){

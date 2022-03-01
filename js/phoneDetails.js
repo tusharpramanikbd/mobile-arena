@@ -1,5 +1,6 @@
 import { fetchPhoneDetails } from "./fetchData.js";
 
+// Initialize show phone details listener
 const initShowDetailsEventListener = () => {
   const btnShowDetails = [...document.querySelectorAll(".btn-details")];
   btnShowDetails.forEach((buttonItem) => {
@@ -15,9 +16,9 @@ const initShowDetailsEventListener = () => {
   });
 }
 
+// Show phone details
 const showPhoneDetails = (phoneDetails) => {
-  
-  const {name, releaseDate, brand} = phoneDetails;
+  const {name, releaseDate, brand, image} = phoneDetails;
   const mainFeatures = phoneDetails.mainFeatures;
   const { chipSet, displaySize, memory, storage} = mainFeatures;
   const sectionPhoneDetails = document.querySelector("#section-phone-details");
@@ -92,7 +93,7 @@ const showPhoneDetails = (phoneDetails) => {
   <div>
     <div class="row gy-5 gy-lg-0 gx-lg-5 align-items-center">
       <div class="col-12 col-lg-6">
-        <img class="d-block w-100 img-phone-details" src="./icon/img-1.jpg" alt="img-1">
+        <img class="d-block w-100 img-phone-details" src="${image}" alt="${name}">
       </div>
       <div class="col-12 col-lg-6">
         <div>
@@ -173,6 +174,7 @@ sectionPhoneDetails.innerHTML = phoneDetailsHtml;
 initCrossButtonListener();
 }
 
+// Initialize cross button listener
 const initCrossButtonListener = () => {
   const btnCross = document.querySelector(".btn-cross");
   btnCross.addEventListener("click", ()=>{
@@ -180,6 +182,7 @@ const initCrossButtonListener = () => {
   })
 }
 
+// Remove product details
 const removeProductDetails = () => {
   const element = document.querySelector(".container-phone-details");
   element.parentNode.removeChild(element);

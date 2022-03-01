@@ -1,4 +1,4 @@
-const phoneListBaseURL = "https://openapi.programming-hero.com/api/phones?search=";
+let phoneListBaseURL = "https://openapi.programming-hero.com/api/phones?search=";
 let phoneDetailsBaseURL = "https://openapi.programming-hero.com/api/phone/";
 
 // Fetch phone list from api address
