@@ -130,13 +130,22 @@ End of Spinner Section
 =======================
 */
 
+/*
+========================
+Section Show all button
+========================
+*/
 .section-show-all{
 	display: none;
 }
-
 .show-element{
 	display: block;
 }
+/*
+===============================
+End of Section Show all button
+===============================
+*/
 
 
 

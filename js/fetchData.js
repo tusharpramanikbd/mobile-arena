@@ -1,6 +1,7 @@
 const phoneListBaseURL = "https://openapi.programming-hero.com/api/phones?search=";
 let phoneDetailsBaseURL = "https://openapi.programming-hero.com/api/phone/";
 
+// Fetch phone list from api address
 const fetchPhoneList = async (searchData) => {
   let phoneListURL = `${phoneListBaseURL}${searchData}`;
   try{

@@ -1,8 +1,8 @@
 import { fetchPhoneList } from "./fetchData.js";
 
-
 let btnSearch, sectionPhoneList, noPhoneFound, spinnerSection, sectionShowAll, btnShowAll, allPhoneList;
 
+// Initialize the UI element
 const initUI = () => {
   btnSearch = document.querySelector("#btn-search");
   sectionPhoneList = document.querySelector(".section-phone-list");
@@ -13,14 +13,7 @@ const initUI = () => {
 
 initUI();
 
-const initShowAllButton = () => {
-  btnShowAll = document.querySelector("#btn-show-all");
-  btnShowAll.addEventListener("click",()=>{
-    showPhoneList(allPhoneList);
-  })
-}
-
-
+// Button search event listener
 btnSearch.addEventListener("click", async (e)=>{
   e.preventDefault();
   spinnerSection.classList.add("show-element");
@@ -53,12 +46,22 @@ btnSearch.addEventListener("click", async (e)=>{
   }
 })
 
+// Show all button functionality
+const initShowAllButton = () => {
+  btnShowAll = document.querySelector("#btn-show-all");
+  btnShowAll.addEventListener("click",()=>{
+    showPhoneList(allPhoneList);
+  })
+}
+
+// Show empty list text
 const showEmptyList = () => {
   sectionPhoneList.classList.remove("show-element");
   spinnerSection.classList.remove("show-element");
   noPhoneFound.classList.add("show-element");
 }
 
+// Show phone list
 const showPhoneList = (phoneList) => { 
   spinnerSection.classList.remove("show-element");
   noPhoneFound.classList.remove("show-element");
