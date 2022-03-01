@@ -12,4 +12,15 @@ const fetchPhoneList = async (searchData) => {
   }
 }
 
-export { fetchPhoneList };
+// Fetch phone details from api address
+const fetchPhoneDetails = async (phoneId) => {
+  let phoneDetailsURL = `${phoneDetailsBaseURL}${phoneId}`;
+  try{
+    let response = await fetch(phoneDetailsURL);
+    return await response.json();
+  }catch(err){
+    console.error(err);
+  }
+}
+
+export { fetchPhoneList, fetchPhoneDetails };
