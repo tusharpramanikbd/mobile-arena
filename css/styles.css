@@ -90,6 +90,11 @@ End of Phone list section
 ==========================
 */
 
+/*
+==========================
+No phone found section
+==========================
+*/
 .no-phone-found-section{
 	position: absolute;
 	top: 50%;
@@ -97,9 +102,33 @@ End of Phone list section
 	transform: translate(-50%, -50%);
 	display: none;
 }
+
+/*
+=============================
+End of No phone found section
+=============================
+*/
+
+/*
+===============
+Spinner Section
+===============
+*/
+.spinner-section{
+	position: absolute;
+	top: 49%;
+	left: 49%;
+	display: none;
+}
 .show-element{
 	display: block;
 }
+/*
+=======================
+End of Spinner Section
+=======================
+*/
+
 
 
 
