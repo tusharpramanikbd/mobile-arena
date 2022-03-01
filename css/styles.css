@@ -53,6 +53,23 @@ End of Search Section
 
 /*
 ======================
+Phone details section
+======================
+*/
+@media screen and (min-width: 992px) {
+  .img-phone-details{
+		height: 45rem;
+		object-fit: cover;
+	}
+}
+/*
+============================
+End of Phone details section
+============================
+*/
+
+/*
+======================
 Phone list section
 ======================
 */
