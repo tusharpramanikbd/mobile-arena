@@ -84,7 +84,7 @@ const showPhoneList = (phoneList) => {
         <div class="mt-2 body-details">
           <h5 class="card-title">Name: ${phoneName}</h5>
           <p class="card-text mb-5">Brand: ${brand}</p>
-          <a href="#" data-id=${id} class="btn btn-primary btn-details">Details</a>
+          <a href="#section-phone-details" data-id=${id} class="btn btn-primary btn-details">Details</a>
         </div>
       </div>
     </div>`;
