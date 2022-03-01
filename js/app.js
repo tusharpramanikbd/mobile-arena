@@ -1,7 +1,15 @@
 import { fetchPhoneList } from "./fetchData.js";
 
 
-const btnSearch = document.querySelector("#btn-search");
+let btnSearch, sectionPhoneList, noPhoneFound;
+
+const initUI = () => {
+  btnSearch = document.querySelector("#btn-search");
+  sectionPhoneList = document.querySelector(".section-phone-list");
+  noPhoneFound = document.querySelector(".no-phone-found-section");
+}
+
+initUI();
 
 btnSearch.addEventListener("click", async (e)=>{
   e.preventDefault();
@@ -10,13 +18,26 @@ btnSearch.addEventListener("click", async (e)=>{
   try {
     const result = await fetchPhoneList(inputSearch);
     const phoneList = result.data;
-    showPhoneList(phoneList);
+    if(phoneList.length < 1){
+      showEmptyList();
+    }
+    else{
+      showPhoneList(phoneList);
+    }
   } catch (error) {
     console.log(error);
   }
 })
 
-const showPhoneList = (phoneList) => {
+const showEmptyList = () => {
+  sectionPhoneList.classList.remove("show-element");
+  noPhoneFound.classList.add("show-element");
+}
+
+const showPhoneList = (phoneList) => { 
+  sectionPhoneList.classList.add("show-element");
+  noPhoneFound.classList.remove("show-element");
+
   const phoneListContainer = document.querySelector(".phone-list-container");
 
   const phoneListHtml = phoneList

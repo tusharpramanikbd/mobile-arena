@@ -73,6 +73,9 @@ End of Phone details section
 Phone list section
 ======================
 */
+.section-phone-list{
+	display: none;
+}
 .body-details{
 	position: relative;
 }
@@ -86,6 +89,17 @@ Phone list section
 End of Phone list section
 ==========================
 */
+
+.no-phone-found-section{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+}
+.show-element{
+	display: block;
+}
 
 
 
